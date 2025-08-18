@@ -1,0 +1,18 @@
+{
+  "transactions": [
+    {
+      "id": 1755525324388,
+      "type": "income",
+      "amount": 9450000,
+      "description": "EFECTIVO",
+      "category": "Caja chica",
+      "paymentMethod": "efectivo",
+      "date": "2025-08-18",
+      "notes": "Este es el dinero que se saco en efectivo del banco itau para pagar dimabel y otros tramites ",
+      "files": [],
+      "timestamp": "2025-08-18T13:55:24.388Z"
+    }
+  ],
+  "lastSync": "2025-08-18T13:55:24.389Z",
+  "backup": true
+}
