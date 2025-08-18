@@ -47,8 +47,22 @@
       "notes": "Este es el dinero que hay en la cuenta corriente INTERFISA ",
       "files": [],
       "timestamp": "2025-08-18T14:01:12.228Z"
+    },
+    {
+      "id": 1755527101384,
+      "type": "expense",
+      "amount": 150000,
+      "description": "PAGO A SUBSECRETARIA DE TRIBUTACION-william valiero",
+      "category": "Gastos ",
+      "paymentMethod": "transferencia",
+      "date": "2025-08-18",
+      "notes": "Liquidacion para la boleta de william valiero padre",
+      "files": [
+        "SET William Valiero.pdf"
+      ],
+      "timestamp": "2025-08-18T14:25:01.384Z"
     }
   ],
-  "lastSync": "2025-08-18T14:23:29.506Z",
+  "lastSync": "2025-08-18T14:25:01.385Z",
   "backup": true
 }
