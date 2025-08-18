@@ -63,18 +63,6 @@
       "timestamp": "2025-08-18T14:25:01.384Z"
     },
     {
-      "id": 1755528603119,
-      "type": "income",
-      "amount": 2033681,
-      "description": "Pago de Tabarez",
-      "category": "Cobro ",
-      "paymentMethod": "cheque",
-      "date": "2025-08-18",
-      "notes": "Pago en cheque del Sr Tabarez",
-      "files": [],
-      "timestamp": "2025-08-18T14:50:03.119Z"
-    },
-    {
       "id": 1755528716988,
       "type": "income",
       "amount": 12325200,
@@ -87,6 +75,6 @@
       "timestamp": "2025-08-18T14:51:56.988Z"
     }
   ],
-  "lastSync": "2025-08-18T14:51:56.988Z",
+  "lastSync": "2025-08-18T14:52:01.554Z",
   "backup": true
 }
