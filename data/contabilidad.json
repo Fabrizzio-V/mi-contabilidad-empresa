@@ -35,8 +35,20 @@
       "notes": "Este es el dinero que hay en interfisa cuenta de AHORRO",
       "files": [],
       "timestamp": "2025-08-18T14:00:08.827Z"
+    },
+    {
+      "id": 1755525672228,
+      "type": "income",
+      "amount": 9073000,
+      "description": "INTERFISA C CORRIENTE",
+      "category": "Banco INTERFISA ",
+      "paymentMethod": "transferencia",
+      "date": "2025-08-18",
+      "notes": "Este es el dinero que hay en la cuenta corriente INTERFISA ",
+      "files": [],
+      "timestamp": "2025-08-18T14:01:12.228Z"
     }
   ],
-  "lastSync": "2025-08-18T14:00:08.828Z",
+  "lastSync": "2025-08-18T14:01:12.229Z",
   "backup": true
 }
