@@ -73,8 +73,20 @@
       "notes": "Pago de monte alto en cheque ",
       "files": [],
       "timestamp": "2025-08-18T14:51:56.988Z"
+    },
+    {
+      "id": 1755528758591,
+      "type": "income",
+      "amount": 2033681,
+      "description": "Chque Nr 24937847",
+      "category": "Cobro",
+      "paymentMethod": "cheque",
+      "date": "2025-08-18",
+      "notes": "Pago del Sr Tabarez",
+      "files": [],
+      "timestamp": "2025-08-18T14:52:38.591Z"
     }
   ],
-  "lastSync": "2025-08-18T14:52:01.554Z",
+  "lastSync": "2025-08-18T14:52:38.591Z",
   "backup": true
 }
