@@ -11,8 +11,20 @@
       "notes": "Este es el dinero que se saco en efectivo del banco itau para pagar dimabel y otros tramites ",
       "files": [],
       "timestamp": "2025-08-18T13:55:24.388Z"
+    },
+    {
+      "id": 1755525498838,
+      "type": "income",
+      "amount": 105620000,
+      "description": "ITAU",
+      "category": "Cuenta ITAU",
+      "paymentMethod": "transferencia",
+      "date": "2025-08-18",
+      "notes": "Esto es lo que hay actualmente a la fecha en el banco ITAU",
+      "files": [],
+      "timestamp": "2025-08-18T13:58:18.838Z"
     }
   ],
-  "lastSync": "2025-08-18T13:56:23.516Z",
+  "lastSync": "2025-08-18T13:58:18.839Z",
   "backup": true
 }
