@@ -73,8 +73,20 @@
       "notes": "Pago en cheque del Sr Tabarez",
       "files": [],
       "timestamp": "2025-08-18T14:50:03.119Z"
+    },
+    {
+      "id": 1755528716988,
+      "type": "income",
+      "amount": 12325200,
+      "description": "Cheque Nr 24802498",
+      "category": "COBRO",
+      "paymentMethod": "cheque",
+      "date": "2025-08-18",
+      "notes": "Pago de monte alto en cheque ",
+      "files": [],
+      "timestamp": "2025-08-18T14:51:56.988Z"
     }
   ],
-  "lastSync": "2025-08-18T14:51:14.773Z",
+  "lastSync": "2025-08-18T14:51:56.988Z",
   "backup": true
 }
