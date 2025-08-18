@@ -23,8 +23,20 @@
       "notes": "Esto es lo que hay actualmente a la fecha en el banco ITAU",
       "files": [],
       "timestamp": "2025-08-18T13:58:18.838Z"
+    },
+    {
+      "id": 1755525608827,
+      "type": "income",
+      "amount": 5065000,
+      "description": "INTERFISA",
+      "category": "BANCO INTERFISA AHORRO",
+      "paymentMethod": "transferencia",
+      "date": "2025-08-18",
+      "notes": "Este es el dinero que hay en interfisa cuenta de AHORRO",
+      "files": [],
+      "timestamp": "2025-08-18T14:00:08.827Z"
     }
   ],
-  "lastSync": "2025-08-18T13:58:18.839Z",
+  "lastSync": "2025-08-18T14:00:08.828Z",
   "backup": true
 }
