@@ -111,9 +111,21 @@
       "notes": "Adelanto a Yemima Penayo dado por Getulio en efectivo y ya devuelto al mismo",
       "files": [],
       "timestamp": "2025-08-19T14:35:38.065Z"
+    },
+    {
+      "id": 1755614178602,
+      "type": "expense",
+      "amount": 2083000,
+      "description": "Pago de Judiciales ",
+      "category": "JUDICIALES",
+      "paymentMethod": "efectivo",
+      "date": "2025-08-19",
+      "notes": "",
+      "files": [],
+      "timestamp": "2025-08-19T14:36:18.602Z"
     }
   ],
-  "lastSync": "2025-08-19T14:35:38.066Z",
+  "lastSync": "2025-08-19T14:36:18.603Z",
   "backup": true,
   "fileData": {
     "1755527101384": [
