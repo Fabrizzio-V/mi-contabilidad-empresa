@@ -99,9 +99,21 @@
         "Taller regius.pdf"
       ],
       "timestamp": "2025-08-19T14:33:53.241Z"
+    },
+    {
+      "id": 1755614138065,
+      "type": "expense",
+      "amount": 100000,
+      "description": "Adelanto Yemima ",
+      "category": "ADELANTOS",
+      "paymentMethod": "efectivo",
+      "date": "2025-08-18",
+      "notes": "Adelanto a Yemima Penayo dado por Getulio en efectivo y ya devuelto al mismo",
+      "files": [],
+      "timestamp": "2025-08-19T14:35:38.065Z"
     }
   ],
-  "lastSync": "2025-08-19T14:34:15.364Z",
+  "lastSync": "2025-08-19T14:35:38.066Z",
   "backup": true,
   "fileData": {
     "1755527101384": [
