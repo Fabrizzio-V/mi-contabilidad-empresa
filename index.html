@@ -19,7 +19,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -34,6 +34,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .status-indicator {
@@ -100,6 +102,12 @@
             border-radius: 12px;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
         }
 
         .stat-card.expense {
@@ -108,6 +116,46 @@
 
         .stat-card.balance {
             background: linear-gradient(135deg, #4299e1, #3182ce);
+        }
+
+        .monthly-view {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .monthly-selector {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .month-nav {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        .month-nav:hover {
+            background: #764ba2;
+        }
+
+        .current-month {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4a5568;
+            min-width: 200px;
+            text-align: center;
         }
 
         .main-content {
@@ -120,6 +168,10 @@
         @media (max-width: 768px) {
             .main-content {
                 grid-template-columns: 1fr;
+            }
+            .monthly-selector {
+                flex-direction: column;
+                gap: 10px;
             }
         }
 
@@ -188,6 +240,11 @@
             transform: none;
         }
 
+        .btn-secondary {
+            background: linear-gradient(135deg, #718096, #4a5568);
+            margin-top: 5px;
+        }
+
         .btn-export {
             background: linear-gradient(135deg, #48bb78, #38a169);
             margin-top: 15px;
@@ -203,11 +260,13 @@
             padding: 15px;
             margin-bottom: 10px;
             border-radius: 0 8px 8px 0;
-            transition: transform 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
         }
 
         .transaction-item:hover {
             transform: translateX(5px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .transaction-item.expense {
@@ -243,14 +302,32 @@
             color: #718096;
         }
 
-        .delete-btn {
-            background: #e53e3e;
+        .transaction-actions {
+            display: flex;
+            gap: 5px;
+        }
+
+        .action-btn {
+            background: #667eea;
             color: white;
             border: none;
-            padding: 5px 10px;
+            padding: 5px 8px;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 12px;
+            font-size: 11px;
+            transition: background 0.3s ease;
+        }
+
+        .action-btn.edit {
+            background: #ed8936;
+        }
+
+        .action-btn.delete {
+            background: #e53e3e;
+        }
+
+        .action-btn:hover {
+            opacity: 0.8;
         }
 
         .file-upload {
@@ -286,6 +363,12 @@
             font-size: 0.9rem;
         }
 
+        .file-preview {
+            cursor: pointer;
+            color: #667eea;
+            text-decoration: underline;
+        }
+
         .filters {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -317,10 +400,14 @@
             background: white;
             padding: 30px;
             border-radius: 15px;
-            max-width: 500px;
+            max-width: 600px;
             width: 90%;
-            max-height: 80vh;
+            max-height: 90vh;
             overflow-y: auto;
+        }
+
+        .modal-content.large {
+            max-width: 800px;
         }
 
         .close {
@@ -358,6 +445,113 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+
+        .file-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .file-thumbnail {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .file-thumbnail:hover {
+            transform: scale(1.05);
+            border-color: #667eea;
+        }
+
+        .file-thumbnail img {
+            max-width: 100%;
+            max-height: 80px;
+            border-radius: 4px;
+        }
+
+        .pdf-icon {
+            font-size: 40px;
+            color: #e53e3e;
+            margin-bottom: 5px;
+        }
+
+        .edit-form {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .monthly-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .monthly-stat {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .monthly-stat.income {
+            border-color: #48bb78;
+        }
+
+        .monthly-stat.expense {
+            border-color: #f56565;
+        }
+
+        .monthly-stat.balance {
+            border-color: #4299e1;
+        }
+
+        .quick-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .quick-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #667eea;
+            color: #667eea;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .quick-btn:hover, .quick-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .search-box {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .search-box input {
+            padding-left: 40px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #718096;
+        }
     </style>
 </head>
 <body>
@@ -373,24 +567,47 @@
         <div class="header">
             <h1>☁️ Contabilidad Empresarial Cloud</h1>
             <div class="stats">
-                <div class="stat-card">
+                <div class="stat-card" onclick="showAllTransactions()">
                     <h3>Total Ingresos</h3>
                     <h2 id="totalIncome">$0</h2>
                 </div>
-                <div class="stat-card expense">
+                <div class="stat-card expense" onclick="showAllTransactions()">
                     <h3>Total Gastos</h3>
                     <h2 id="totalExpense">$0</h2>
                 </div>
-                <div class="stat-card balance">
+                <div class="stat-card balance" onclick="showAllTransactions()">
                     <h3>Balance</h3>
                     <h2 id="balance">$0</h2>
                 </div>
             </div>
         </div>
 
+        <div class="monthly-view">
+            <div class="monthly-selector">
+                <button class="month-nav" onclick="changeMonth(-1)">◀ Anterior</button>
+                <div class="current-month" id="currentMonth"></div>
+                <button class="month-nav" onclick="changeMonth(1)">Siguiente ▶</button>
+            </div>
+            <div class="monthly-stats" id="monthlyStats"></div>
+        </div>
+
+        <div class="quick-actions">
+            <button class="quick-btn active" onclick="setQuickFilter('all')">📊 Todos</button>
+            <button class="quick-btn" onclick="setQuickFilter('today')">📅 Hoy</button>
+            <button class="quick-btn" onclick="setQuickFilter('week')">📆 Esta Semana</button>
+            <button class="quick-btn" onclick="setQuickFilter('income')">💰 Ingresos</button>
+            <button class="quick-btn" onclick="setQuickFilter('expense')">💸 Gastos</button>
+            <button class="quick-btn" onclick="setQuickFilter('efectivo')">💵 Efectivo</button>
+            <button class="quick-btn" onclick="setQuickFilter('transferencia')">🏦 Transferencias</button>
+        </div>
+
         <div class="filters">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchBox" placeholder="Buscar por descripción o categoría...">
+            </div>
             <div>
-                <label for="filterType">Filtrar por tipo:</label>
+                <label for="filterType">Tipo:</label>
                 <select id="filterType">
                     <option value="all">Todos</option>
                     <option value="income">Ingresos</option>
@@ -418,8 +635,9 @@
 
         <div class="main-content">
             <div class="form-section">
-                <h2>➕ Agregar Transacción</h2>
+                <h2 id="formTitle">➕ Agregar Transacción</h2>
                 <form id="transactionForm">
+                    <input type="hidden" id="editId" value="">
                     <div class="form-group">
                         <label for="type">Tipo de transacción:</label>
                         <select id="type" required>
@@ -441,7 +659,8 @@
 
                     <div class="form-group">
                         <label for="category">Categoría:</label>
-                        <input type="text" id="category" placeholder="Ej: Ventas, Gastos operativos, etc.">
+                        <input type="text" id="category" placeholder="Ej: Ventas, Gastos operativos, etc." list="categoryList">
+                        <datalist id="categoryList"></datalist>
                     </div>
 
                     <div class="form-group">
@@ -475,6 +694,7 @@
                     </div>
 
                     <button type="submit" class="btn" id="submitBtn">Agregar Transacción</button>
+                    <button type="button" class="btn btn-secondary" id="cancelBtn" onclick="cancelEdit()" style="display: none;">Cancelar</button>
                 </form>
             </div>
 
@@ -485,15 +705,17 @@
                 </button>
                 <div id="transactionsList"></div>
                 <button class="btn btn-export" onclick="exportToCSV()">📥 Exportar a CSV</button>
+                <button class="btn btn-export" onclick="generateReport()">📊 Generar Reporte</button>
                 <button class="btn btn-export" onclick="clearAllData()" style="background: linear-gradient(135deg, #e53e3e, #c53030);">🗑️ Limpiar Todo</button>
             </div>
         </div>
     </div>
 
+    <!-- Modales -->
     <div id="detailModal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content large">
             <span class="close" onclick="closeModal('detailModal')">&times;</span>
-            <h2>Detalles de la Transacción</h2>
+            <h2>📋 Detalles de la Transacción</h2>
             <div id="modalContent"></div>
         </div>
     </div>
@@ -530,10 +752,29 @@
         </div>
     </div>
 
+    <div id="fileModal" class="modal">
+        <div class="modal-content large">
+            <span class="close" onclick="closeModal('fileModal')">&times;</span>
+            <h2>📎 Visualizar Archivo</h2>
+            <div id="fileContent"></div>
+        </div>
+    </div>
+
+    <div id="reportModal" class="modal">
+        <div class="modal-content large">
+            <span class="close" onclick="closeModal('reportModal')">&times;</span>
+            <h2>📊 Reporte Detallado</h2>
+            <div id="reportContent"></div>
+        </div>
+    </div>
+
     <script>
         // Variables globales
         let transactions = [];
         let currentFiles = {};
+        let editingId = null;
+        let currentMonth = new Date();
+        let currentFilter = 'all';
         let githubConfig = {
             token: '',
             repo: '',
@@ -544,6 +785,7 @@
         // Cargar configuración y datos al iniciar
         loadFromMemory();
         loadGitHubConfig();
+        updateCurrentMonthDisplay();
         
         // Inicializar fecha actual
         document.getElementById('date').value = new Date().toISOString().split('T')[0];
@@ -653,12 +895,12 @@
             const data = {
                 transactions: transactions,
                 lastSync: new Date().toISOString(),
-                backup: true
+                backup: true,
+                fileData: await getFileDataForSync()
             };
 
             const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
             
-            // Obtener SHA del archivo actual si existe
             let sha = null;
             try {
                 const fileResponse = await fetch(`https://api.github.com/repos/${githubConfig.repo}/contents/data/contabilidad.json`, {
@@ -699,6 +941,16 @@
                 const error = await response.json();
                 throw new Error(error.message || 'Error al guardar en GitHub');
             }
+        }
+
+        async function getFileDataForSync() {
+            const fileData = {};
+            for (const transaction of transactions) {
+                if (transaction.files && transaction.files.length > 0) {
+                    fileData[transaction.id] = transaction.files;
+                }
+            }
+            return fileData;
         }
 
         async function loadFromGitHub() {
@@ -749,7 +1001,112 @@
             }
         }
 
-        // Manejadores de archivos
+        // Funciones de vista mensual
+        function updateCurrentMonthDisplay() {
+            const monthNames = [
+                'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+                'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+            ];
+            
+            document.getElementById('currentMonth').textContent = 
+                `${monthNames[currentMonth.getMonth()]} ${currentMonth.getFullYear()}`;
+            updateMonthlyStats();
+        }
+
+        function changeMonth(direction) {
+            currentMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + direction, 1);
+            updateCurrentMonthDisplay();
+            updateTransactionsList();
+        }
+
+        function updateMonthlyStats() {
+            const monthTransactions = transactions.filter(t => {
+                const transDate = new Date(t.date);
+                return transDate.getMonth() === currentMonth.getMonth() && 
+                       transDate.getFullYear() === currentMonth.getFullYear();
+            });
+
+            const income = monthTransactions.filter(t => t.type === 'income').reduce((sum, t) => sum + t.amount, 0);
+            const expense = monthTransactions.filter(t => t.type === 'expense').reduce((sum, t) => sum + t.amount, 0);
+            const balance = income - expense;
+
+            const statsHtml = `
+                <div class="monthly-stat income">
+                    <h4>Ingresos</h4>
+                    <h3>${income.toLocaleString()}</h3>
+                    <small>${monthTransactions.filter(t => t.type === 'income').length} transacciones</small>
+                </div>
+                <div class="monthly-stat expense">
+                    <h4>Gastos</h4>
+                    <h3>${expense.toLocaleString()}</h3>
+                    <small>${monthTransactions.filter(t => t.type === 'expense').length} transacciones</small>
+                </div>
+                <div class="monthly-stat balance">
+                    <h4>Balance</h4>
+                    <h3>${balance.toLocaleString()}</h3>
+                    <small>${balance >= 0 ? 'Positivo' : 'Negativo'}</small>
+                </div>
+                <div class="monthly-stat">
+                    <h4>Total Transacciones</h4>
+                    <h3>${monthTransactions.length}</h3>
+                    <small>Este mes</small>
+                </div>
+            `;
+
+            document.getElementById('monthlyStats').innerHTML = statsHtml;
+        }
+
+        // Funciones de filtros rápidos
+        function setQuickFilter(filter) {
+            // Actualizar botones activos
+            document.querySelectorAll('.quick-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            currentFilter = filter;
+            const today = new Date().toISOString().split('T')[0];
+            const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+
+            // Limpiar filtros existentes
+            document.getElementById('filterType').value = 'all';
+            document.getElementById('filterPayment').value = 'all';
+            document.getElementById('dateFrom').value = '';
+            document.getElementById('dateTo').value = '';
+            document.getElementById('searchBox').value = '';
+
+            switch (filter) {
+                case 'today':
+                    document.getElementById('dateFrom').value = today;
+                    document.getElementById('dateTo').value = today;
+                    break;
+                case 'week':
+                    document.getElementById('dateFrom').value = weekAgo;
+                    document.getElementById('dateTo').value = today;
+                    break;
+                case 'income':
+                    document.getElementById('filterType').value = 'income';
+                    break;
+                case 'expense':
+                    document.getElementById('filterType').value = 'expense';
+                    break;
+                case 'efectivo':
+                    document.getElementById('filterPayment').value = 'efectivo';
+                    break;
+                case 'transferencia':
+                    document.getElementById('filterPayment').value = 'transferencia';
+                    break;
+            }
+
+            updateTransactionsList();
+        }
+
+        function showAllTransactions() {
+            setQuickFilter('all');
+            // Mostrar todas las transacciones, no solo del mes actual
+            currentMonth = new Date();
+            updateCurrentMonthDisplay();
+        }
+
+        // Funciones de archivos mejoradas
         const fileUpload = document.getElementById('fileUpload');
         const fileInput = document.getElementById('fileInput');
 
@@ -781,39 +1138,141 @@
                 
                 const fileDiv = document.createElement('div');
                 fileDiv.className = 'file-item';
+                
+                const isImage = file.type.startsWith('image/');
+                const isPDF = file.type === 'application/pdf';
+                
                 fileDiv.innerHTML = `
-                    <span>📎 ${file.name}</span>
+                    <span class="file-preview" onclick="previewFile('${fileId}')">
+                        ${isImage ? '🖼️' : isPDF ? '📄' : '📎'} ${file.name}
+                    </span>
                     <button onclick="removeFile(${fileId})" style="background: #e53e3e; color: white; border: none; padding: 2px 8px; border-radius: 3px; cursor: pointer;">×</button>
                 `;
                 document.getElementById('uploadedFiles').appendChild(fileDiv);
             });
         }
 
+        function previewFile(fileId) {
+            const file = currentFiles[fileId];
+            if (!file) return;
+
+            const modal = document.getElementById('fileModal');
+            const content = document.getElementById('fileContent');
+            
+            if (file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    content.innerHTML = `
+                        <div style="text-align: center;">
+                            <h3>${file.name}</h3>
+                            <img src="${e.target.result}" style="max-width: 100%; max-height: 500px; margin: 20px 0;">
+                            <p>Tamaño: ${(file.size / 1024 / 1024).toFixed(2)} MB</p>
+                        </div>
+                    `;
+                };
+                reader.readAsDataURL(file);
+            } else if (file.type === 'application/pdf') {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    content.innerHTML = `
+                        <div style="text-align: center;">
+                            <h3>${file.name}</h3>
+                            <div style="margin: 20px 0;">
+                                <div class="pdf-icon">📄</div>
+                                <p>Archivo PDF</p>
+                                <p>Tamaño: ${(file.size / 1024 / 1024).toFixed(2)} MB</p>
+                                <button class="btn" onclick="downloadFile('${fileId}')" style="margin-top: 15px;">⬇️ Descargar</button>
+                            </div>
+                        </div>
+                    `;
+                };
+                reader.readAsDataURL(file);
+            }
+            
+            modal.style.display = 'block';
+        }
+
+        function downloadFile(fileId) {
+            const file = currentFiles[fileId];
+            if (!file) return;
+            
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(file);
+            link.download = file.name;
+            link.click();
+        }
+
         function removeFile(fileId) {
             delete currentFiles[fileId];
+            updateFileDisplay();
+        }
+
+        function updateFileDisplay() {
             document.getElementById('uploadedFiles').innerHTML = '';
             Object.keys(currentFiles).forEach(id => {
                 const file = currentFiles[id];
                 const fileDiv = document.createElement('div');
                 fileDiv.className = 'file-item';
+                
+                const isImage = file.type.startsWith('image/');
+                const isPDF = file.type === 'application/pdf';
+                
                 fileDiv.innerHTML = `
-                    <span>📎 ${file.name}</span>
+                    <span class="file-preview" onclick="previewFile('${id}')">
+                        ${isImage ? '🖼️' : isPDF ? '📄' : '📎'} ${file.name}
+                    </span>
                     <button onclick="removeFile(${id})" style="background: #e53e3e; color: white; border: none; padding: 2px 8px; border-radius: 3px; cursor: pointer;">×</button>
                 `;
                 document.getElementById('uploadedFiles').appendChild(fileDiv);
             });
         }
 
-        // Formulario
+        // Funciones de edición
+        function editTransaction(id) {
+            const transaction = transactions.find(t => t.id === id);
+            if (!transaction) return;
+
+            editingId = id;
+            
+            // Llenar el formulario con los datos existentes
+            document.getElementById('editId').value = id;
+            document.getElementById('type').value = transaction.type;
+            document.getElementById('amount').value = transaction.amount;
+            document.getElementById('description').value = transaction.description;
+            document.getElementById('category').value = transaction.category;
+            document.getElementById('paymentMethod').value = transaction.paymentMethod;
+            document.getElementById('date').value = transaction.date;
+            document.getElementById('notes').value = transaction.notes;
+
+            // Cambiar título y botones
+            document.getElementById('formTitle').innerHTML = '✏️ Editar Transacción';
+            document.getElementById('submitBtn').textContent = 'Actualizar Transacción';
+            document.getElementById('cancelBtn').style.display = 'block';
+
+            // Scroll al formulario
+            document.querySelector('.form-section').scrollIntoView({ behavior: 'smooth' });
+            
+            showNotification('Editando transacción - Modifica los campos necesarios');
+        }
+
+        function cancelEdit() {
+            editingId = null;
+            clearForm();
+            document.getElementById('formTitle').innerHTML = '➕ Agregar Transacción';
+            document.getElementById('submitBtn').textContent = 'Agregar Transacción';
+            document.getElementById('cancelBtn').style.display = 'none';
+        }
+
+        // Formulario mejorado
         document.getElementById('transactionForm').onsubmit = async function(e) {
             e.preventDefault();
             
             const btn = document.getElementById('submitBtn');
             btn.disabled = true;
+            const originalText = btn.textContent;
             btn.innerHTML = '<span class="loading"></span> Guardando...';
             
-            const transaction = {
-                id: Date.now(),
+            const transactionData = {
                 type: document.getElementById('type').value,
                 amount: parseFloat(document.getElementById('amount').value),
                 description: document.getElementById('description').value,
@@ -825,29 +1284,52 @@
                 timestamp: new Date().toISOString()
             };
 
-            transactions.push(transaction);
+            if (editingId) {
+                // Actualizar transacción existente
+                const index = transactions.findIndex(t => t.id === editingId);
+                if (index !== -1) {
+                    transactions[index] = { ...transactions[index], ...transactionData };
+                    showNotification('✅ Transacción actualizada exitosamente');
+                }
+                editingId = null;
+                cancelEdit();
+            } else {
+                // Nueva transacción
+                const transaction = {
+                    id: Date.now(),
+                    ...transactionData
+                };
+                transactions.push(transaction);
+                showNotification('✅ Transacción agregada exitosamente');
+                clearForm();
+            }
+
             saveToMemory();
             updateDisplay();
-            clearForm();
+            updateCategories();
             
             // Auto-sync si está conectado
             if (isConnected) {
                 try {
                     await saveToGitHub();
-                    showNotification('✅ Transacción guardada y sincronizada');
                 } catch (error) {
-                    showNotification('⚠️ Transacción guardada localmente. Error al sincronizar: ' + error.message, 'warning');
+                    showNotification('⚠️ Error al sincronizar: ' + error.message, 'warning');
                 }
-            } else {
-                showNotification('💾 Transacción guardada localmente');
             }
             
             btn.disabled = false;
-            btn.innerHTML = 'Agregar Transacción';
+            btn.textContent = originalText;
         };
+
+        function updateCategories() {
+            const categories = [...new Set(transactions.map(t => t.category).filter(c => c))];
+            const datalist = document.getElementById('categoryList');
+            datalist.innerHTML = categories.map(c => `<option value="${c}">`).join('');
+        }
 
         function clearForm() {
             document.getElementById('transactionForm').reset();
+            document.getElementById('editId').value = '';
             document.getElementById('date').value = new Date().toISOString().split('T')[0];
             currentFiles = {};
             document.getElementById('uploadedFiles').innerHTML = '';
@@ -856,6 +1338,7 @@
         function updateDisplay() {
             updateStats();
             updateTransactionsList();
+            updateMonthlyStats();
         }
 
         function updateStats() {
@@ -873,23 +1356,27 @@
             const filteredTransactions = getFilteredTransactions();
             
             if (filteredTransactions.length === 0) {
-                list.innerHTML = '<p style="text-align: center; color: #718096;">No hay transacciones registradas</p>';
+                list.innerHTML = '<p style="text-align: center; color: #718096; padding: 20px;">No hay transacciones que coincidan con los filtros</p>';
                 return;
             }
 
             list.innerHTML = filteredTransactions.map(transaction => `
-                <div class="transaction-item ${transaction.type}" onclick="showDetails(${transaction.id})">
+                <div class="transaction-item ${transaction.type}">
                     <div class="transaction-header">
-                        <div>
+                        <div onclick="showDetails(${transaction.id})" style="cursor: pointer; flex-grow: 1;">
                             <div class="transaction-amount ${transaction.type === 'income' ? 'amount-positive' : 'amount-negative'}">
                                 ${transaction.type === 'income' ? '+' : '-'}${transaction.amount.toLocaleString()}
                             </div>
                             <div style="font-weight: 600; margin-top: 4px;">${transaction.description}</div>
                         </div>
-                        <button class="delete-btn" onclick="event.stopPropagation(); deleteTransaction(${transaction.id})">🗑️</button>
+                        <div class="transaction-actions">
+                            <button class="action-btn" onclick="showDetails(${transaction.id})" title="Ver detalles">👁️</button>
+                            <button class="action-btn edit" onclick="editTransaction(${transaction.id})" title="Editar">✏️</button>
+                            <button class="action-btn delete" onclick="deleteTransaction(${transaction.id})" title="Eliminar">🗑️</button>
+                        </div>
                     </div>
                     <div class="transaction-details">
-                        📅 ${transaction.date} | 💳 ${transaction.paymentMethod} | 📁 ${transaction.category || 'Sin categoría'}
+                        📅 ${new Date(transaction.date).toLocaleDateString()} | 💳 ${transaction.paymentMethod} | 📁 ${transaction.category || 'Sin categoría'}
                         ${transaction.files.length > 0 ? ` | 📎 ${transaction.files.length} archivo(s)` : ''}
                     </div>
                 </div>
@@ -898,6 +1385,16 @@
 
         function getFilteredTransactions() {
             let filtered = [...transactions];
+
+            // Filtro de búsqueda
+            const search = document.getElementById('searchBox').value.toLowerCase();
+            if (search) {
+                filtered = filtered.filter(t => 
+                    t.description.toLowerCase().includes(search) ||
+                    (t.category && t.category.toLowerCase().includes(search)) ||
+                    (t.notes && t.notes.toLowerCase().includes(search))
+                );
+            }
 
             const typeFilter = document.getElementById('filterType').value;
             const paymentFilter = document.getElementById('filterPayment').value;
@@ -918,6 +1415,15 @@
 
             if (dateTo) {
                 filtered = filtered.filter(t => t.date <= dateTo);
+            }
+
+            // Si no hay filtros específicos, mostrar solo el mes actual
+            if (!dateFrom && !dateTo && currentFilter === 'all') {
+                filtered = filtered.filter(t => {
+                    const transDate = new Date(t.date);
+                    return transDate.getMonth() === currentMonth.getMonth() && 
+                           transDate.getFullYear() === currentMonth.getFullYear();
+                });
             }
 
             return filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -946,21 +1452,211 @@
             const transaction = transactions.find(t => t.id === id);
             if (!transaction) return;
 
+            const fileGallery = transaction.files.length > 0 ? `
+                <div style="margin-top: 20px;">
+                    <h4>📎 Archivos Adjuntos:</h4>
+                    <div class="file-gallery">
+                        ${transaction.files.map(fileName => {
+                            const isImage = fileName.match(/\.(jpg|jpeg|png|gif|webp)$/i);
+                            const isPDF = fileName.match(/\.pdf$/i);
+                            return `
+                                <div class="file-thumbnail" onclick="showNotification('Archivo: ${fileName}')">
+                                    ${isImage ? '<div>🖼️</div>' : isPDF ? '<div class="pdf-icon">📄</div>' : '<div>📎</div>'}
+                                    <div style="font-size: 12px; margin-top: 5px; word-break: break-all;">${fileName}</div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            ` : '';
+
             document.getElementById('modalContent').innerHTML = `
                 <div style="margin-bottom: 15px;">
-                    <strong>Tipo:</strong> ${transaction.type === 'income' ? 'Ingreso' : 'Gasto'}<br>
-                    <strong>Monto:</strong> ${transaction.amount.toLocaleString()}<br>
-                    <strong>Descripción:</strong> ${transaction.description}<br>
-                    <strong>Categoría:</strong> ${transaction.category || 'Sin categoría'}<br>
-                    <strong>Método de pago:</strong> ${transaction.paymentMethod}<br>
-                    <strong>Fecha:</strong> ${transaction.date}<br>
-                    <strong>Notas:</strong> ${transaction.notes || 'Sin notas'}<br>
-                    <strong>Archivos adjuntos:</strong> ${transaction.files.length > 0 ? transaction.files.join(', ') : 'Ninguno'}<br>
-                    <strong>Creado:</strong> ${new Date(transaction.timestamp).toLocaleString()}
+                    <div style="background: ${transaction.type === 'income' ? '#e6fffa' : '#fed7d7'}; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                        <h3 style="color: ${transaction.type === 'income' ? '#38a169' : '#e53e3e'};">
+                            ${transaction.type === 'income' ? '💰 Ingreso' : '💸 Gasto'}: ${transaction.amount.toLocaleString()}
+                        </h3>
+                    </div>
+                    
+                    <div style="display: grid; gap: 10px; margin-bottom: 15px;">
+                        <div><strong>📝 Descripción:</strong> ${transaction.description}</div>
+                        <div><strong>📁 Categoría:</strong> ${transaction.category || 'Sin categoría'}</div>
+                        <div><strong>💳 Método de pago:</strong> ${transaction.paymentMethod}</div>
+                        <div><strong>📅 Fecha:</strong> ${new Date(transaction.date).toLocaleDateString()}</div>
+                        <div><strong>🕐 Creado:</strong> ${new Date(transaction.timestamp).toLocaleString()}</div>
+                    </div>
+                    
+                    ${transaction.notes ? `
+                        <div style="background: #f7fafc; padding: 10px; border-radius: 6px; margin-bottom: 15px;">
+                            <strong>📝 Notas:</strong><br>
+                            ${transaction.notes}
+                        </div>
+                    ` : ''}
+                    
+                    ${fileGallery}
+                    
+                    <div style="margin-top: 20px; display: flex; gap: 10px;">
+                        <button class="btn" onclick="editTransaction(${transaction.id}); closeModal('detailModal');" style="flex: 1;">
+                            ✏️ Editar
+                        </button>
+                        <button class="btn" onclick="deleteTransaction(${transaction.id}); closeModal('detailModal');" 
+                                style="flex: 1; background: linear-gradient(135deg, #e53e3e, #c53030);">
+                            🗑️ Eliminar
+                        </button>
+                    </div>
                 </div>
             `;
             
             document.getElementById('detailModal').style.display = 'block';
+        }
+
+        // Función de reportes
+        function generateReport() {
+            const reportData = generateReportData();
+            const content = `
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <h3>📊 Reporte Financiero Detallado</h3>
+                    <p>Generado el ${new Date().toLocaleDateString()} a las ${new Date().toLocaleTimeString()}</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px;">
+                    <div style="background: #e6fffa; padding: 15px; border-radius: 8px; text-align: center;">
+                        <h4>Total Ingresos</h4>
+                        <h2 style="color: #38a169;">${reportData.totalIncome.toLocaleString()}</h2>
+                        <small>${reportData.incomeCount} transacciones</small>
+                    </div>
+                    <div style="background: #fed7d7; padding: 15px; border-radius: 8px; text-align: center;">
+                        <h4>Total Gastos</h4>
+                        <h2 style="color: #e53e3e;">${reportData.totalExpense.toLocaleString()}</h2>
+                        <small>${reportData.expenseCount} transacciones</small>
+                    </div>
+                    <div style="background: #ebf8ff; padding: 15px; border-radius: 8px; text-align: center;">
+                        <h4>Balance Neto</h4>
+                        <h2 style="color: #3182ce;">${reportData.balance.toLocaleString()}</h2>
+                        <small>${reportData.balance >= 0 ? 'Positivo' : 'Deficitario'}</small>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 30px;">
+                    <h4>💳 Por Método de Pago:</h4>
+                    ${Object.entries(reportData.byPaymentMethod).map(([method, data]) => `
+                        <div style="display: flex; justify-content: between; align-items: center; padding: 10px; background: #f7fafc; margin: 5px 0; border-radius: 6px;">
+                            <span><strong>${method}:</strong></span>
+                            <span>${data.total.toLocaleString()} (${data.count} transacciones)</span>
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <div style="margin-bottom: 30px;">
+                    <h4>📁 Por Categoría:</h4>
+                    ${Object.entries(reportData.byCategory).map(([category, data]) => `
+                        <div style="display: flex; justify-content: between; align-items: center; padding: 10px; background: #f7fafc; margin: 5px 0; border-radius: 6px;">
+                            <span><strong>${category || 'Sin categoría'}:</strong></span>
+                            <span>${data.total.toLocaleString()} (${data.count} transacciones)</span>
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn" onclick="exportReportToCSV()" style="margin: 0 10px;">📥 Exportar Reporte CSV</button>
+                    <button class="btn" onclick="printReport()" style="margin: 0 10px; background: linear-gradient(135deg, #805ad5, #6b46c1);">🖨️ Imprimir</button>
+                </div>
+            `;
+            
+            document.getElementById('reportContent').innerHTML = content;
+            document.getElementById('reportModal').style.display = 'block';
+        }
+
+        function generateReportData() {
+            const totalIncome = transactions.filter(t => t.type === 'income').reduce((sum, t) => sum + t.amount, 0);
+            const totalExpense = transactions.filter(t => t.type === 'expense').reduce((sum, t) => sum + t.amount, 0);
+            const incomeCount = transactions.filter(t => t.type === 'income').length;
+            const expenseCount = transactions.filter(t => t.type === 'expense').length;
+            
+            const byPaymentMethod = {};
+            const byCategory = {};
+            
+            transactions.forEach(t => {
+                // Por método de pago
+                if (!byPaymentMethod[t.paymentMethod]) {
+                    byPaymentMethod[t.paymentMethod] = { total: 0, count: 0 };
+                }
+                byPaymentMethod[t.paymentMethod].total += t.amount;
+                byPaymentMethod[t.paymentMethod].count += 1;
+                
+                // Por categoría
+                const category = t.category || 'Sin categoría';
+                if (!byCategory[category]) {
+                    byCategory[category] = { total: 0, count: 0 };
+                }
+                byCategory[category].total += t.amount;
+                byCategory[category].count += 1;
+            });
+            
+            return {
+                totalIncome,
+                totalExpense,
+                balance: totalIncome - totalExpense,
+                incomeCount,
+                expenseCount,
+                byPaymentMethod,
+                byCategory
+            };
+        }
+
+        function exportReportToCSV() {
+            const reportData = generateReportData();
+            const headers = ['Concepto', 'Tipo', 'Monto', 'Cantidad'];
+            const csvContent = [
+                headers.join(','),
+                `"Total Ingresos","Resumen",${reportData.totalIncome},${reportData.incomeCount}`,
+                `"Total Gastos","Resumen",${reportData.totalExpense},${reportData.expenseCount}`,
+                `"Balance Neto","Resumen",${reportData.balance},""`,
+                '',
+                '"DESGLOSE POR MÉTODO DE PAGO"',
+                ...Object.entries(reportData.byPaymentMethod).map(([method, data]) => 
+                    `"${method}","Método de Pago",${data.total},${data.count}`
+                ),
+                '',
+                '"DESGLOSE POR CATEGORÍA"',
+                ...Object.entries(reportData.byCategory).map(([category, data]) => 
+                    `"${category}","Categoría",${data.total},${data.count}`
+                )
+            ].join('\n');
+
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+            link.setAttribute('href', url);
+            link.setAttribute('download', `reporte_contabilidad_${new Date().toISOString().split('T')[0]}.csv`);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            showNotification('📥 Reporte CSV descargado exitosamente');
+        }
+
+        function printReport() {
+            const reportContent = document.getElementById('reportContent').innerHTML;
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`
+                <html>
+                <head>
+                    <title>Reporte Contabilidad</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; margin: 20px; }
+                        h3, h4 { color: #333; }
+                        .btn { display: none; }
+                    </style>
+                </head>
+                <body>
+                    ${reportContent}
+                </body>
+                </html>
+            `);
+            printWindow.document.close();
+            printWindow.print();
         }
 
         function showConfigModal() {
@@ -1009,19 +1705,21 @@
 
         async function clearAllData() {
             if (confirm('⚠️ ¿Estás seguro de que quieres eliminar TODAS las transacciones? Esta acción no se puede deshacer.')) {
-                transactions = [];
-                saveToMemory();
-                updateDisplay();
-                
-                if (isConnected) {
-                    try {
-                        await saveToGitHub();
-                        showNotification('🗑️ Todos los datos eliminados y sincronizados');
-                    } catch (error) {
-                        showNotification('⚠️ Datos eliminados localmente. Error al sincronizar: ' + error.message, 'warning');
+                if (confirm('🔒 Confirmación adicional: Esto eliminará TODOS los datos permanentemente.')) {
+                    transactions = [];
+                    saveToMemory();
+                    updateDisplay();
+                    
+                    if (isConnected) {
+                        try {
+                            await saveToGitHub();
+                            showNotification('🗑️ Todos los datos eliminados y sincronizados');
+                        } catch (error) {
+                            showNotification('⚠️ Datos eliminados localmente. Error al sincronizar: ' + error.message, 'warning');
+                        }
+                    } else {
+                        showNotification('🗑️ Todos los datos eliminados localmente');
                     }
-                } else {
-                    showNotification('🗑️ Todos los datos eliminados localmente');
                 }
             }
         }
@@ -1043,6 +1741,7 @@
                 animation: slideIn 0.3s ease;
                 max-width: 300px;
                 word-wrap: break-word;
+                font-size: 14px;
             `;
             notification.textContent = message;
             
@@ -1050,23 +1749,38 @@
             
             setTimeout(() => {
                 notification.style.animation = 'slideOut 0.3s ease';
-                setTimeout(() => document.body.removeChild(notification), 300);
+                setTimeout(() => {
+                    if (document.body.contains(notification)) {
+                        document.body.removeChild(notification);
+                    }
+                }, 300);
             }, 5000);
         }
 
-        // Event listeners para filtros
+        // Event listeners
         document.getElementById('filterType').onchange = updateTransactionsList;
         document.getElementById('filterPayment').onchange = updateTransactionsList;
         document.getElementById('dateFrom').onchange = updateTransactionsList;
         document.getElementById('dateTo').onchange = updateTransactionsList;
+        document.getElementById('searchBox').oninput = updateTransactionsList;
 
-        // Cerrar modal con Escape
-        document.onkeydown = function(e) {
+        // Cerrar modal con Escape y clic fuera
+        document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeModal('detailModal');
                 closeModal('configModal');
+                closeModal('fileModal');
+                closeModal('reportModal');
             }
-        };
+        });
+
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
 
         // Agregar estilos para animaciones
         const style = document.createElement('style');
@@ -1091,6 +1805,7 @@
 
         // Inicializar display
         updateDisplay();
+        updateCategories();
     </script>
 </body>
 </html>
