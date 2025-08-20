@@ -135,9 +135,21 @@
       "notes": "PAGO IPS",
       "files": [],
       "timestamp": "2025-08-20T21:35:21.188Z"
+    },
+    {
+      "id": 1755725795373,
+      "type": "expense",
+      "amount": 1650000,
+      "description": " taller Regius",
+      "category": "Taller ",
+      "paymentMethod": "transferencia",
+      "date": "2025-08-20",
+      "notes": "TALLER REGIUS PRIMO DE GETULIO",
+      "files": [],
+      "timestamp": "2025-08-20T21:36:35.373Z"
     }
   ],
-  "lastSync": "2025-08-20T21:35:21.190Z",
+  "lastSync": "2025-08-20T21:36:35.374Z",
   "backup": true,
   "fileData": {
     "1755527101384": [
