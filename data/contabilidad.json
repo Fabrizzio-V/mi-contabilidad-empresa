@@ -171,9 +171,21 @@
       "notes": "",
       "files": [],
       "timestamp": "2025-08-20T21:38:52.985Z"
+    },
+    {
+      "id": 1755726554268,
+      "type": "income",
+      "amount": 2420000,
+      "description": "pago de norma",
+      "category": "pago de servicio extra",
+      "paymentMethod": "transferencia",
+      "date": "2025-08-19",
+      "notes": "",
+      "files": [],
+      "timestamp": "2025-08-20T21:49:14.268Z"
     }
   ],
-  "lastSync": "2025-08-20T21:48:57.734Z",
+  "lastSync": "2025-08-20T21:49:14.269Z",
   "backup": true,
   "fileData": {
     "1755527101384": [
