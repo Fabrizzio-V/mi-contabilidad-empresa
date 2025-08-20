@@ -123,9 +123,21 @@
       "notes": "",
       "files": [],
       "timestamp": "2025-08-19T14:36:18.602Z"
+    },
+    {
+      "id": 1755725721188,
+      "type": "expense",
+      "amount": 21820339,
+      "description": "IPS ",
+      "category": "IPS",
+      "paymentMethod": "transferencia",
+      "date": "2025-08-20",
+      "notes": "PAGO IPS",
+      "files": [],
+      "timestamp": "2025-08-20T21:35:21.188Z"
     }
   ],
-  "lastSync": "2025-08-20T21:32:50.828Z",
+  "lastSync": "2025-08-20T21:35:21.190Z",
   "backup": true,
   "fileData": {
     "1755527101384": [
