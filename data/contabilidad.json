@@ -243,9 +243,21 @@
       "notes": "",
       "files": [],
       "timestamp": "2025-08-21T21:14:39.700Z"
+    },
+    {
+      "id": 1755811000792,
+      "type": "income",
+      "amount": 5920000,
+      "description": "PAGO LAOS SOCIEDAD ANONIMA",
+      "category": "COBRO",
+      "paymentMethod": "transferencia",
+      "date": "2025-08-21",
+      "notes": "",
+      "files": [],
+      "timestamp": "2025-08-21T21:16:40.792Z"
     }
   ],
-  "lastSync": "2025-08-21T21:15:58.925Z",
+  "lastSync": "2025-08-21T21:16:40.794Z",
   "backup": true,
   "fileData": {
     "1755527101384": [
