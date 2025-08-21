@@ -195,9 +195,21 @@
       "notes": "Adelanto a irala dado por getulio para ida a Sb",
       "files": [],
       "timestamp": "2025-08-21T20:53:45.221Z"
+    },
+    {
+      "id": 1755809662890,
+      "type": "expense",
+      "amount": 150000,
+      "description": "EFECTIVO",
+      "category": "Trabajo getulio efectivo extra ",
+      "paymentMethod": "efectivo",
+      "date": "2025-08-21",
+      "notes": "sb",
+      "files": [],
+      "timestamp": "2025-08-21T20:54:22.890Z"
     }
   ],
-  "lastSync": "2025-08-21T20:53:45.223Z",
+  "lastSync": "2025-08-21T20:54:22.891Z",
   "backup": true,
   "fileData": {
     "1755527101384": [
