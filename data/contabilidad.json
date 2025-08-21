@@ -185,18 +185,6 @@
       "timestamp": "2025-08-20T21:49:14.268Z"
     },
     {
-      "id": 1755809625221,
-      "type": "expense",
-      "amount": 50000,
-      "description": "adelanto caja chica a Fernando IRALA",
-      "category": "ADELANTOS",
-      "paymentMethod": "efectivo",
-      "date": "2025-08-21",
-      "notes": "Adelanto a irala dado por getulio para ida a Sb",
-      "files": [],
-      "timestamp": "2025-08-21T20:53:45.221Z"
-    },
-    {
       "id": 1755809662890,
       "type": "expense",
       "amount": 150000,
@@ -257,7 +245,7 @@
       "timestamp": "2025-08-21T21:16:40.792Z"
     }
   ],
-  "lastSync": "2025-08-21T21:45:58.925Z",
+  "lastSync": "2025-08-21T21:48:50.571Z",
   "backup": true,
   "fileData": {
     "1755527101384": [
