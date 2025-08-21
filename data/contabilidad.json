@@ -207,9 +207,21 @@
       "notes": "sb",
       "files": [],
       "timestamp": "2025-08-21T20:54:22.890Z"
+    },
+    {
+      "id": 1755810098997,
+      "type": "expense",
+      "amount": 263407,
+      "description": "Adelanto a Javier pago de deuda credimarket",
+      "category": "ADELANTOS",
+      "paymentMethod": "transferencia",
+      "date": "2025-08-21",
+      "notes": "",
+      "files": [],
+      "timestamp": "2025-08-21T21:01:38.997Z"
     }
   ],
-  "lastSync": "2025-08-21T21:00:58.926Z",
+  "lastSync": "2025-08-21T21:01:38.998Z",
   "backup": true,
   "fileData": {
     "1755527101384": [
