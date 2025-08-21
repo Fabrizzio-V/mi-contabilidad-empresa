@@ -231,9 +231,21 @@
       "notes": "",
       "files": [],
       "timestamp": "2025-08-21T21:16:40.792Z"
+    },
+    {
+      "id": 1755813047533,
+      "type": "expense",
+      "amount": 38070000,
+      "description": "Adelantos totales a la fecha 21",
+      "category": "Adelanto TOTAL",
+      "paymentMethod": "transferencia",
+      "date": "2025-08-21",
+      "notes": "EFECTIVO Y TRANSFERENCIA, ESTO FUE EL ADELANTO TOTAL HASTA LA FECHA 21",
+      "files": [],
+      "timestamp": "2025-08-21T21:50:47.533Z"
     }
   ],
-  "lastSync": "2025-08-21T21:49:32.437Z",
+  "lastSync": "2025-08-21T21:50:47.534Z",
   "backup": true,
   "fileData": {
     "1755527101384": [
