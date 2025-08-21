@@ -199,14 +199,14 @@
     {
       "id": 1755810162888,
       "type": "expense",
-      "amount": 254,
+      "amount": 254000,
       "description": "adelanto a Javier crediagil",
       "category": "ADELANTOS",
       "paymentMethod": "transferencia",
       "date": "2025-08-21",
       "notes": "",
       "files": [],
-      "timestamp": "2025-08-21T21:02:42.888Z"
+      "timestamp": "2025-08-21T21:49:32.436Z"
     },
     {
       "id": 1755810879700,
@@ -233,7 +233,7 @@
       "timestamp": "2025-08-21T21:16:40.792Z"
     }
   ],
-  "lastSync": "2025-08-21T21:49:03.159Z",
+  "lastSync": "2025-08-21T21:49:32.437Z",
   "backup": true,
   "fileData": {
     "1755527101384": [
