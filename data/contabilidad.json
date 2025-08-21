@@ -149,18 +149,6 @@
       "timestamp": "2025-08-20T21:38:01.091Z"
     },
     {
-      "id": 1755725932985,
-      "type": "expense",
-      "amount": 33000000,
-      "description": "pago de ADELANTOS agosto  ",
-      "category": "ADELANTO GENERAL",
-      "paymentMethod": "transferencia",
-      "date": "2025-08-20",
-      "notes": "",
-      "files": [],
-      "timestamp": "2025-08-20T21:38:52.985Z"
-    },
-    {
       "id": 1755726554268,
       "type": "income",
       "amount": 2420000,
@@ -245,7 +233,7 @@
       "timestamp": "2025-08-21T21:50:47.533Z"
     }
   ],
-  "lastSync": "2025-08-21T21:50:58.520Z",
+  "lastSync": "2025-08-21T21:52:07.552Z",
   "backup": true,
   "fileData": {
     "1755527101384": [
