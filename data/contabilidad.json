@@ -255,9 +255,21 @@
       "notes": "Adelanto Rosalino Benitez\n",
       "files": [],
       "timestamp": "2025-08-25T12:11:27.417Z"
+    },
+    {
+      "id": 1756127155114,
+      "type": "expense",
+      "amount": 75000,
+      "description": "Cenas 24 hs (2) y Adelanto A rivas ",
+      "category": "CENA Y Adelanto EFE",
+      "paymentMethod": "efectivo",
+      "date": "2025-08-25",
+      "notes": "55 MIL EN CENAS Y 20 MIL A RIVAS EN EFECTIVO",
+      "files": [],
+      "timestamp": "2025-08-25T13:05:55.114Z"
     }
   ],
-  "lastSync": "2025-08-25T13:04:50.544Z",
+  "lastSync": "2025-08-25T13:05:55.116Z",
   "backup": true,
   "fileData": {
     "1755527101384": [
