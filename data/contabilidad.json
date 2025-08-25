@@ -231,9 +231,21 @@
       "notes": "EFECTIVO Y TRANSFERENCIA, ESTO FUE EL ADELANTO TOTAL HASTA LA FECHA 21",
       "files": [],
       "timestamp": "2025-08-21T21:50:47.533Z"
+    },
+    {
+      "id": 1756123845024,
+      "type": "expense",
+      "amount": 2899000,
+      "description": "MILCIADES ALVAREZ VACACIONES ",
+      "category": "Vacaciones ",
+      "paymentMethod": "transferencia",
+      "date": "2025-08-22",
+      "notes": "Vacaciones Milciades Alvarez ",
+      "files": [],
+      "timestamp": "2025-08-25T12:10:45.024Z"
     }
   ],
-  "lastSync": "2025-08-21T21:52:07.552Z",
+  "lastSync": "2025-08-25T12:10:45.026Z",
   "backup": true,
   "fileData": {
     "1755527101384": [
