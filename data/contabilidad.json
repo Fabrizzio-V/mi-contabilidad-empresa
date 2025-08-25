@@ -243,9 +243,21 @@
       "notes": "Vacaciones Milciades Alvarez ",
       "files": [],
       "timestamp": "2025-08-25T12:10:45.024Z"
+    },
+    {
+      "id": 1756123887417,
+      "type": "expense",
+      "amount": 100000,
+      "description": "Adelanto Rosalino Benitez",
+      "category": "ADELANTOS",
+      "paymentMethod": "transferencia",
+      "date": "2025-08-24",
+      "notes": "Adelanto Rosalino Benitez\n",
+      "files": [],
+      "timestamp": "2025-08-25T12:11:27.417Z"
     }
   ],
-  "lastSync": "2025-08-25T12:10:45.026Z",
+  "lastSync": "2025-08-25T12:11:27.418Z",
   "backup": true,
   "fileData": {
     "1755527101384": [
